@@ -4,12 +4,13 @@
   "description": "Personal Finance Tracker is a simple web application that helps users track their income and expenses. Users can categorize their transactions as either income or expenses, and view a summary of their financial data through a pie chart.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }
