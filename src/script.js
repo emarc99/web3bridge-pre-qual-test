@@ -1,3 +1,5 @@
+const { addTransaction, calculateTotals } = require('./utils');
+
 document.addEventListener('DOMContentLoaded', function () {
     const transactionForm = document.getElementById('transaction-form');
     const transactionsList = document.getElementById('transactions-list');
@@ -10,12 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('transactions', JSON.stringify(transactions));
     }
 
-    function addTransaction(transaction) {
-        transactions.push(transaction);
-        updateLocalStorage();
-        renderTransactions();
-        updateChart();
-    }
 
     function renderTransactions() {
         transactionsList.innerHTML = '';
@@ -27,18 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function calculateTotals() {
-        let income = 0;
-        let expense = 0;
-        transactions.forEach(transaction => {
-            if (transaction.category === 'income') {
-                income += transaction.amount;
-            } else {
-                expense += transaction.amount;
-            }
-        });
-        return { income, expense };
-    }
+
 
     function updateChart() {
         const { income, expense } = calculateTotals();
@@ -52,7 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const amount = parseFloat(document.getElementById('amount').value);
         const category = document.getElementById('category').value;
         const transaction = { description, amount, category };
-        addTransaction(transaction);
+        transactions = addTransaction(transactions, transaction);
+        updateLocalStorage();
+        renderTransactions();
+        updateChart();
         transactionForm.reset();
     });
 

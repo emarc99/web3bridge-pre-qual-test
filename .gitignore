@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Coverage directory used by tools like Jest
+coverage/
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# dotenv environment variables file
+.env
+
+# Output of 'npm pack'
+*.tgz
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# MacOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Jest test coverage folder
+coverage/
